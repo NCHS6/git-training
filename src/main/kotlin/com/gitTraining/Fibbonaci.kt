@@ -3,9 +3,10 @@ package com.gitTraining
 fun computeFibbonaciNumber(position: Int): Int {
     if (position == 0) return 0
     if (position < 0) {
-        val positionIsOdd = position % 2 == -1
-        return if (positionIsOdd) computeFibbonaciNumber(-position) else (computeFibbonaciNumber(-position) * -1)
+        return computeNegativeFibbonachi(position)
     }
+    var i = 1
+    var j = 1
 
     if (position == 1 || position == 2) return 1
 
@@ -20,6 +21,13 @@ fun computeFibbonaciNumber(position: Int): Int {
         currentPosition ++
     }
     return largeFibbonachiNumber
+}
+
+fun computeNegativeFibbonachi(position:Int): Int {
+    if (position >= 0) throw Exception("potition must be smaller than zero!")
+    val resultIsNegative = position % 2 == 0
+    val absoluteResult = computeFibbonaciNumber(-position)
+    return if (resultIsNegative) (absoluteResult * -1) else absoluteResult
 }
 
 fun computeFibbonachiArray(start: Int, end: Int, efficient: Boolean = false): List<Int> {
