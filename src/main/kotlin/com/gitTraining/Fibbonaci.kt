@@ -1,12 +1,13 @@
 package com.gitTraining
 
-fun computeFibbonaciNumber(position: Int, recursion: Boolean = false): Int {
-    if (recursion) return recursiveFibbonachi(position)
+fun computeFibbonaciNumber(position: Int?, recursion: Boolean = false): Int {
+
 
     var notNullPosition = position
     if (notNullPosition == null) {
         notNullPosition = 1
     }
+    if (recursion) return recursiveFibbonachi(notNullPosition)
 
 
 
