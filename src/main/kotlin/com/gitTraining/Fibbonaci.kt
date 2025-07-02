@@ -5,6 +5,7 @@ fun computeFibbonaciNumber(position: Int?): Int {
     if (notNullPosition == null) {
         notNullPosition = 1
     }
+}
 fun computeFibbonaciNumber(position: Int): Int {
     if (position == 0) return 0
     if (position < 0) {
